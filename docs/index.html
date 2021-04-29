@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .table {
+        margin-bottom: 10px;
+        border: 1px solid #dddddd;
+        border-collapse: collapse;
+      }
+
+      .table th {
+        font-weight: bold;
+
+        padding: 5px;
+
+        background: #efefef;
+
+        border: 1px solid #dddddd;
+      }
+
+      .table td {
+        border: 1px solid #dddddd;
+
+        padding: 5px;
+      }
+
+      form {
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <form name="myForm" action="">
+      <label for="">
+        Email
+        <input type="text" id="email" name="email" required />
+      </label>
+      <label for="">
+        First name
+        <input type="text" id="firstName" name="firstName" />
+      </label>
+      <label for="">
+        Last name
+        <input type="text" id="lastName" name="lastName" />
+      </label>
+      <label for="">
+        Address
+        <input type="text" id="address" name="address" />
+      </label>
+      <label for=""
+        >Gender
+        <select name="gender" id="gender" required>
+          <option value="male">male</option>
+          <option value="female">female</option>
+        </select>
+      </label>
+
+      <label for="">active user<input type="checkbox" name="check" /></label>
+      <button id="submit">add user</button>
+    </form>
+
+    <table class="table">
+      <thead>
+        <th>id</th>
+        <th>email</th>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Address</th>
+        <th>Gender</th>
+        <th>Active</th>
+        <th>Delete</th>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <script src="./js/main.js"></script>
+  </body>
+</html>
