@@ -32,7 +32,21 @@ form.addEventListener("submit", (e) => {
       addObj(obj);
     });
 });
+table.addEventListener("click", function(e){
+  e.preventDefault();
+  console.log(e.target.closest('tr').children);
+  let id = e.target.closest('tr').children[0].innerHTML;
+  fetch(`http://157.230.108.157:3000/user/${id}`, {
+    method: 'DELETE',
+    headers: {
+      "Content-Type": "application/json;charset=utf-8",
+    }
+  });
+  console.log(e.target.closest('td'));
+  if (e.target.closest('td').innerHTML.includes("X")) {
+  e.target.closest('tr').remove();}
 
+})
 fetch("http://157.230.108.157:3000/user")
   .then((response) => response.json())
   .then((users) => {
@@ -40,9 +54,12 @@ fetch("http://157.230.108.157:3000/user")
     users.forEach((element) => {
       addObj(element);
     });
+  
   });
+
+  
 function addObj(element) {
-  let tr = document.createElement("tr");
+   let tr = document.createElement("tr");
 
   let td0 = document.createElement("td");
   td0.innerHTML = element.id;
